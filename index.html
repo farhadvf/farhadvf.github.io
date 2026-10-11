@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Farhad V. Farahani</title>
+<meta name="description" content="Farhad V. Farahani, Ph.D. candidate in Economics at the University of South Florida. Health economics, Medicaid policy, applied microeconometrics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column, a narrow left rail of section labels on wide screens; navy ink from the CV */
+:root {
+  --bg: #fbfbfd;
+  --surface: #f0f2f7;
+  --fg: #1a2233;
+  --muted: #5a6478;
+  --rule: #d9dde7;
+  --accent: #1f3864;
+  --accent-soft: #e3e8f3;
+  --display: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121722; --surface: #1a2130; --fg: #e4e8f0; --muted: #9aa4b8;
+    --rule: #2c3547; --accent: #9db6e8; --accent-soft: #1f2a40; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #121722; --surface: #1a2130; --fg: #e4e8f0; --muted: #9aa4b8;
+  --rule: #2c3547; --accent: #9db6e8; --accent-soft: #1f2a40; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0;
+  background: var(--bg); color: var(--fg);
+  font: 400 1.0625rem/1.6 var(--body);
+  padding-inline: 20px; padding-block: 0 64px;
+}
+.wrap { max-width: 920px; margin: 0 auto; }
+a { color: var(--accent); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+
+/* top nav */
+nav {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: var(--bg); border-bottom: 1px solid var(--rule);
+  margin-inline: -20px; padding: 12px 20px;
+}
+nav .wrap { display: flex; flex-wrap: wrap; gap: 6px 22px; align-items: baseline; }
+nav .home { font: 600 1rem var(--display); color: var(--fg); text-decoration: none; margin-right: auto; }
+nav a.sec { font-size: .9rem; color: var(--muted); text-decoration: none; }
+nav a.sec:hover { color: var(--accent); }
+
+/* header */
+header { padding-block: 48px 40px; display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 32px; align-items: center; }
+header .intro { min-width: 0; display: grid; gap: 16px; }
+.portrait { width: 180px; max-width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 50%; background: var(--surface); }
+@media (max-width: 620px) {
+  header { grid-template-columns: minmax(0, 1fr); gap: 20px; padding-block: 32px 32px; }
+  .portrait { width: 132px; }
+}
+h1 {
+  font: 600 clamp(2.3rem, 6vw, 3.4rem)/1.05 var(--display);
+  letter-spacing: -.01em; margin: 0; color: var(--accent); text-wrap: balance;
+}
+.role { font: italic 400 1.2rem/1.4 var(--display); color: var(--fg); margin: 0; }
+.lede { max-width: 62ch; margin: 0; color: var(--fg); }
+.links { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: .95rem; }
+.email { display: inline-flex; gap: 8px; align-items: center; }
+.email code { font: 400 .9rem var(--mono); }
+.copy {
+  font: 500 .75rem var(--mono); letter-spacing: .04em; text-transform: uppercase;
+  background: var(--accent-soft); color: var(--accent); border: 0; border-radius: 3px;
+  padding: 3px 8px; cursor: pointer;
+}
+
+/* sections with a left label rail */
+section { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 0 32px; padding-block: 34px; border-top: 1px solid var(--rule); }
+section > h2 {
+  font: 500 .78rem/1.8 var(--mono); letter-spacing: .1em; text-transform: uppercase;
+  color: var(--muted); margin: 0;
+}
+section > .body { min-width: 0; display: grid; gap: 26px; }
+@media (max-width: 680px) {
+  section { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+}
+
+h3 { font: 600 .82rem var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent); margin: 0 0 10px; }
+.paper { display: grid; gap: 6px; }
+.paper .t { font: 600 1.18rem/1.35 var(--display); margin: 0; text-wrap: balance; }
+.paper .meta { font-size: .92rem; color: var(--muted); margin: 0; }
+.paper p.abs { margin: 4px 0 0; max-width: 66ch; }
+.list { display: grid; gap: 18px; }
+
+/* job market paper */
+.jmp { background: var(--surface); border-left: 3px solid var(--accent); padding: 22px 24px; border-radius: 0 4px 4px 0; display: grid; gap: 10px; }
+.jmp .t { font-size: 1.4rem; }
+.figs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 8px; padding-top: 14px; border-top: 1px solid var(--rule); }
+.fig b { display: block; font: 600 1.6rem/1.1 var(--display); color: var(--accent); font-variant-numeric: tabular-nums; }
+.fig span { font-size: .85rem; color: var(--muted); line-height: 1.35; display: block; margin-top: 4px; }
+@media (max-width: 520px) { .figs { grid-template-columns: minmax(0, 1fr); } }
+details { font-size: .95rem; }
+summary { cursor: pointer; color: var(--accent); font-weight: 600; }
+details p { margin: 8px 0 0; max-width: 66ch; }
+
+/* rows: item + date */
+.rows { display: grid; gap: 12px; }
+.row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 20px; }
+.row > div { min-width: 0; flex: 1 1 380px; }
+.row .when { font: 400 .85rem var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.row .sub { font-size: .92rem; color: var(--muted); }
+.tag { font: 500 .7rem var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--accent); background: var(--accent-soft); padding: 2px 6px; border-radius: 3px; margin-left: 6px; white-space: nowrap; }
+
+ul.plain { margin: 0; padding-left: 1.1em; display: grid; gap: 4px; }
+.committee { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px 24px; }
+.committee div { min-width: 0; }
+.committee b { display: block; font-weight: 600; }
+.committee span { font-size: .9rem; color: var(--muted); }
+footer { padding-top: 28px; border-top: 1px solid var(--rule); font-size: .85rem; color: var(--muted); }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+</style>
+</head>
+<body>
+<nav aria-label="Sections">
+  <div class="wrap">
+    <a class="home" href="#top">Farhad V. Farahani</a>
+    <a class="sec" href="#research">Research</a>
+    <a class="sec" href="#talks">Talks</a>
+    <a class="sec" href="#teaching">Teaching</a>
+    <a class="sec" href="#about">About</a>
+  </div>
+</nav>
+
+<div class="wrap" id="top">
+  <header>
+    <img class="portrait" src="photo.jpg" alt="Portrait of Farhad V. Farahani" width="180" height="180">
+    <div class="intro">
+    <h1>Farhad V. Farahani</h1>
+    <p class="role">Ph.D. Candidate in Economics, University of South Florida</p>
+    <p class="lede">I am a fourth-year Ph.D. candidate in Economics at the University of South Florida. My research is in health economics and public policy. I study how Medicaid and Medicare policies affect access to care, health outcomes, and disparities, with current work on maternal and infant health and long-term care. My work uses quasi-experimental methods, including staggered difference-in-differences and instrumental variables.</p>
+    <div class="links">
+      <span class="email"><code id="mail">farhadv@usf.edu</code><button class="copy" id="copybtn" type="button">Copy</button></span>
+      <a href="Farahani_CV.pdf">CV (PDF)</a>
+      <a href="https://scholar.google.com/citations?user=LHq41psAAAAJ&hl=en">Google Scholar</a>
+      <a href="https://www.linkedin.com/in/farhad-v-farahani-73a109182">LinkedIn</a>
+    </div>
+    </div>
+  </header>
+
+  <section id="research">
+    <h2>Research</h2>
+    <div class="body">
+
+      <div>
+        <h3>Job Market Paper</h3>
+        <article class="paper jmp">
+          <p class="t">Helping Hands, Healthier Infants: The Effect of Medicaid Doula Coverage Mandates on Birth Outcomes</p>
+          <p class="meta">SEA Annual Meeting, Houston, Nov 2026</p>
+          <details>
+            <summary>Abstract</summary>
+            <p>I evaluate the staggered 2021–2024 rollout of Medicaid doula coverage using 32.1 million births. I find no average effect on low birth weight, but a decline of about 0.5 percentage points (5%) among Black mothers in the longest-exposed states. Coverage roughly doubles the doula workforce.</p>
+          </details>
+        </article>
+      </div>
+
+      <div>
+        <h3>Publications</h3>
+        <article class="paper">
+          <p class="t">Crude Oil Trend Prediction During COVID-19: Machine Learning with Randomized Search and Bayesian Optimization</p>
+          <p class="meta">With S. Firoozabadi and M. Ansari · <i>European Journal of Business and Management Research</i>, 9(3), 2024</p>
+        </article>
+      </div>
+
+      <div>
+        <h3>Working Papers</h3>
+        <article class="paper">
+          <p class="t"><a href="https://arxiv.org/abs/2512.18827">Returns to U.S. and Foreign Experience among Immigrant Men: Evidence from IPUMS Microdata</a></p>
+          <p class="meta">2025 · arXiv:2512.18827</p>
+          <p class="abs">U.S. work experience earns higher wage returns than experience gained abroad, and these returns rise with English proficiency. Census and ACS microdata from IPUMS; Mincer wage regressions with fixed effects.</p>
+        </article>
+      </div>
+
+      <div>
+        <h3>Work in Progress</h3>
+        <div class="list">
+          <article class="paper">
+            <p class="t">Does Electronic Monitoring of Home Care Workers Reduce Care for Elderly and Disabled Americans? Evidence from Medicaid Electronic Visit Verification</p>
+            <p class="abs">The 21st Century Cures Act required states to verify every Medicaid personal-care visit electronically. I use the staggered state rollout of claim denials to test whether the fall in billed hours reflects removed fraud or a burden on honest care.</p>
+          </article>
+          <article class="paper">
+            <p class="t">The Effect of Criminal-Justice Reform on Crime: Evidence from California's Proposition 47</p>
+            <p class="meta">With Rodrigo Pinto</p>
+          </article>
+          <article class="paper">
+            <p class="t">Domestic Workers' Bills of Rights and Labor-Market Outcomes in the United States</p>
+            <p class="abs">Preliminary results point to higher wages and more formal employment. Current Population Survey; event study with staggered adoption.</p>
+          </article>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="talks">
+    <h2>Talks</h2>
+    <div class="body">
+      <div class="rows">
+        <div class="row">
+          <div>Southern Economic Association Annual Meeting, Houston, TX<span class="tag">Upcoming</span>
+            <div class="sub"><i>Helping Hands, Healthier Infants</i> · supported by a Seminar Grant from the USF Department of Economics</div></div>
+          <span class="when">Nov 2026</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="teaching">
+    <h2>Teaching</h2>
+    <div class="body">
+      <div class="rows">
+        <div class="row">
+          <div><b>Instructor of Record</b>, Principles of Macroeconomics (ECO 2013), USF
+            <div class="sub">Student evaluations 4.0 / 5.0</div></div>
+          <span class="when">Fall 2025 – Fall 2026</span>
+        </div>
+        <div class="row">
+          <div><b>Teaching Assistant</b>, USF
+            <div class="sub">Intermediate Price Theory, Microeconomic Principles, Macroeconomic Principles, Development Economics, Game Theory</div></div>
+          <span class="when">2023 – present</span>
+        </div>
+        <div class="row">
+          <div><b>Teaching Assistant</b>, Iran University of Science and Technology
+            <div class="sub">Microeconomics I</div></div>
+          <span class="when">2019 – 2021</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About</h2>
+    <div class="body">
+      <div class="rows">
+        <div class="row"><div><b>Ph.D. in Economics</b>, University of South Florida <div class="sub">Expected May 2028 · M.A. in Economics, 2026</div></div><span class="when">2023 –</span></div>
+        <div class="row"><div><b>M.Sc. in Economics</b>, Iran University of Science and Technology <div class="sub">Economic Systems Planning</div></div><span class="when">2022</span></div>
+        <div class="row"><div><b>B.Sc. in Economics</b>, Allameh Tabataba'i University</div><span class="when">2018</span></div>
+      </div>
+      <div>
+        <h3>Dissertation Committee</h3>
+        <div class="committee">
+          <div><b>Padmaja Ayyagari</b><span>Advisor and Chair · USF</span></div>
+          <div><b>Andrei Barbos</b><span>Professor · USF</span></div>
+          <div><b>Rodrigo Pinto</b><span>Assistant Professor · USF</span></div>
+          <div><b>Kenneth Whaley</b><span>Assistant Professor · USF</span></div>
+          <div><b>Barton Willage</b><span>Associate Professor · University of Delaware</span></div>
+        </div>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p style="margin:0">Department of Economics, CMC 205K<br>University of South Florida, 12010 USF Cherry Dr, Tampa, FL 33620<br><code style="font-family:var(--mono);font-size:.9rem">farhadv@usf.edu</code></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>Updated October 2026</footer>
+</div>
+
+<script>
+document.getElementById('copybtn').addEventListener('click', function () {
+  var btn = this, txt = document.getElementById('mail').textContent;
+  function done(msg) { btn.textContent = msg; setTimeout(function () { btn.textContent = 'Copy'; }, 1600); }
+  try {
+    navigator.clipboard.writeText(txt).then(function () { done('Copied'); }, function () { selectIt(); });
+  } catch (e) { selectIt(); }
+  function selectIt() {
+    var r = document.createRange(); r.selectNodeContents(document.getElementById('mail'));
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r); done('Selected');
+  }
+});
+</script>
+</body>
+</html>
