@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://farhadvf.github.io/sitemap.xml
