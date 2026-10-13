@@ -129,6 +129,10 @@ ul.plain { margin: 0; padding-left: 1.1em; display: grid; gap: 4px; }
 .committee div { min-width: 0; }
 .committee b { display: block; font-weight: 600; }
 .committee span { font-size: .9rem; color: var(--muted); }
+.quotes { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px 20px; margin-top: 6px; }
+.quotes h3 { grid-column: 1 / -1; margin-bottom: 0; }
+.quotes blockquote { margin: 0; padding: 2px 0 2px 14px; border-left: 2px solid var(--rule); font: italic 400 1rem/1.5 var(--display); }
+.quotes cite { display: block; margin-top: 4px; font: 400 .78rem var(--mono); font-style: normal; color: var(--muted); }
 footer { padding-top: 28px; border-top: 1px solid var(--rule); font-size: .85rem; color: var(--muted); }
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
 </style>
@@ -229,8 +233,18 @@ footer { padding-top: 28px; border-top: 1px solid var(--rule); font-size: .85rem
       <div class="rows">
         <div class="row">
           <div><b>Instructor of Record</b>, Principles of Macroeconomics (ECO 2013), USF
-            <div class="sub">Student evaluations 4.0 / 5.0</div></div>
+            <div class="sub">Overall instructor rating: 4.0 / 5 (Fall 2025) · 4.2 / 5 (Spring 2026)</div></div>
           <span class="when">Fall 2025 – Fall 2026</span>
+        </div>
+        <div class="quotes">
+          <h3>From Student Evaluations</h3>
+          <blockquote>“The lectures were very well put together, one of the few lectures I actually felt like I was able to understand the material without any prior knowledge of the subject.”<cite>Spring 2026</cite></blockquote>
+          <blockquote>“He explains well, makes the class interesting with the online activities, and helps students prepare for exams by doing a practice exam.”<cite>Spring 2026</cite></blockquote>
+          <blockquote>“He was a very good teacher who stayed on topic and took his time to help students, even if they were struggling.”<cite>Fall 2025</cite></blockquote>
+          <blockquote>“Very good at making variety of information available to students and has a vested interest in the success of his students.”<cite>Fall 2025</cite></blockquote>
+          <blockquote>“Love the way you included current events in teaching us the basics of economics.”<cite>Spring 2026</cite></blockquote>
+          <blockquote>“I can leave this class while comfortably claiming that I learnt a lot about economics.”<cite>Spring 2026</cite></blockquote>
+          <blockquote>“Great professor, explains macro concepts very well.”<cite>Fall 2025</cite></blockquote>
         </div>
         <div class="row">
           <div><b>Teaching Assistant</b>, USF
@@ -241,6 +255,12 @@ footer { padding-top: 28px; border-top: 1px solid var(--rule); font-size: .85rem
           <div><b>Teaching Assistant</b>, Iran University of Science and Technology
             <div class="sub">Microeconomics I</div></div>
           <span class="when">2019 – 2021</span>
+        </div>
+      </div>
+      <div>
+        <h3>Teaching Reference</h3>
+        <div class="committee">
+          <div><b>Joel Melendez-Lugo</b><span>Assistant Professor of Instruction · USF<br>Teaching Advisor · <a href="mailto:jmelendezlugo@usf.edu">jmelendezlugo@usf.edu</a></span></div>
         </div>
       </div>
     </div>
